@@ -133,9 +133,6 @@ function getData() {
         .then((response) => response.json())
         .then((data) => latestmau(data))
         .catch((err) => errorHandler(err));
-    setTimeout(() => {
-        hideLoading()
-    }, 1000);
 }
 
 function showLoadingScreen() {
@@ -178,6 +175,7 @@ function latestmau(data) {
     document.getElementById('confirmed').innerHTML = mau[0]['confirmed'];
     document.getElementById('recovered').innerHTML = mau[0]['recovered'];
     document.getElementById('deaths').innerHTML = mau[0]['deaths'];
+    hideLoading();
 }
 
 getData();
