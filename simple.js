@@ -127,12 +127,24 @@
 // }, 5000);
 
 function getData() {
-
+    showLoadingScreen();
     const API_ENDPOINT = "https://pomber.github.io/covid19/timeseries.json";
     fetch(API_ENDPOINT)
         .then((response) => response.json())
         .then((data) => latestmau(data))
         .catch((err) => errorHandler(err));
+    setTimeout(() => {
+        hideLoading()
+    }, 1000);
+}
+
+function showLoadingScreen() {
+    document.getElementById('content').style.display = "none";
+}
+
+function hideLoading() {
+    document.getElementById('loads').style.display = "none";
+    document.getElementById('content').style.display = "flex";
 }
 
 function processData(data) {

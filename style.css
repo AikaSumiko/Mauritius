@@ -51,6 +51,18 @@ body {
     justify-content: center;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 25vw;
+    padding: 15px;
+}
+
 .info {
     display: flex;
     justify-content: space-between;
